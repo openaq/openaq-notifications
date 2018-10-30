@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Monitors S3 for new measurements and sends out via public SNS topic
+Resources:
+  PublishFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/publish/index.handle
+      Runtime: nodejs6.10
+      Timeout: 600
+      MemorySize: 256
+      CodeUri: ./
+      Environment:
+        Variables:
+          SNS_TOPIC: arn:aws:sns:us-east-1:470049585876:OPENAQ_NEW_MEASUREMENT
+      AutoPublishAlias: production

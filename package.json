@@ -1,0 +1,15 @@
+{
+  "name": "openaq-notifications",
+  "version": "1.0.0",
+  "description": "Monitors S3 for new measurements and sends out via public SNS topic",
+  "main": "index.js",
+  "repository": "https://github.com/openaq/openaq-fetch",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "author": "Joe Flasher",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.1"
+  }
+}

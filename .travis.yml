@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "10"
+script: true
+before_deploy:
+  - "pip install awscli --upgrade --user"
+deploy:
+  provider: script
+  script: bash _scripts/deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
